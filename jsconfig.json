@@ -1,0 +1,11 @@
+{
+    "compilerOptions":{
+        "baseUrl" : "./",
+        "paths" :{
+            "@/*":[
+                // @/*  在jsconfig.json配置里 ，这个只做联想提示真正转化的是靠vite.config.js
+                "src/*"
+            ]
+        }
+    }
+}
