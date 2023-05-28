@@ -20,4 +20,4 @@ const httpInstance =  axios.create({
   })
 
 
-    export default httpInstance
+export default httpInstance
