@@ -22,6 +22,13 @@ onMounted(()=>{
   <LayoutFixed />
   <LayoutNav />
   <LayoutHeader />
+  <!-- 二级路由出口 -->
   <RouterView />
+<!-- 
+  <RouterView :key="$route.fullPath" />
+  方案一：给RouterView添加key  破坏复用机制强制销毁重建
+ -->
+
+
   <LayoutFooter />
 </template>
