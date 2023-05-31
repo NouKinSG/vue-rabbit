@@ -2,8 +2,7 @@
 import { getDetail } from '@/apis/detail';
 import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
-
-
+import DetailHot from './components/DetailHot.vue'
 
 //  定义商品变量 准备接收请求到的商品详细信息
 const goods=ref([])
@@ -122,13 +121,16 @@ onMounted(()=>{
                     </li>
                   </ul>
                   <!-- 图片 -->
-                  <img v-for="img in goods.details.pictures" :src="img" :key="img" alt="">
+                  <img v-for="img in goods.details.pictures" v-img-lazy="img" :key="img" alt="">
                 </div>
               </div>
             </div>
             <!-- 24热榜+专题推荐 -->
             <div class="goods-aside">
-
+                <!-- 24小时 -->
+                <DetailHot></DetailHot>
+                <!-- 周 -->
+                <DetailHot></DetailHot>
             </div>
           </div>
         </div>
