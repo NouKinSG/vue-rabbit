@@ -10,6 +10,7 @@
 
    <!-- 一级路由出口组件 -->
    <RouterView></RouterView>
+   
 </template>
 
 <style scoped lang="scss">

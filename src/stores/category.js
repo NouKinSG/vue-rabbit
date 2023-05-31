@@ -3,8 +3,6 @@ import { defineStore } from 'pinia'
 import { getCategoryAPI } from '@/apis/layout';
 
 
-
-
 export const useCategoryStore = defineStore('category', () => {
 
     //导航列表的数据管理
@@ -19,7 +17,6 @@ export const useCategoryStore = defineStore('category', () => {
     //返回后数据处理
     categoryList.value = res.result
     }
-
 
     return{
         categoryList,
