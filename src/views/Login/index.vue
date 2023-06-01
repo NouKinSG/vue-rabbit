@@ -9,16 +9,33 @@ import { ref } from 'vue';
 const form=ref({
    account:'',
    password:'',
+   agree:true,
 })
 
 // 2、准备规则对象
 const rules = {
    account:[
-    {required:true,message:'用户名不能为空',trigger:'blur'},
+    {required:true,message:'用户名不能为空',trigger:'change'},
    ],
    password:[
     {required:true,message:'密码不能为空',trigger:'blur'},
-    {min:6,max:14,message:'密码长度为6-14个字符',trigger:'blur'},
+    {min:6,max:14,message:'密码长度为6-14个字符',trigger:'change'},
+   ],
+   agree:[
+    {
+      validator:(rule,value,callback)=>{
+        console.log(rule,value,callback);
+        //自定义校验规则
+
+        //勾选就通过  不勾选就不通过  根据value的值来判断
+        if(value){
+          callback()
+        }else{
+          callback(new Error('请同意隐私条款和服务条款'))
+        }
+        
+      }
+    }
    ],
 }
 
@@ -54,12 +71,12 @@ const rules = {
               <el-form-item prop="password" label="密码">
                 <el-input v-model="form.password"/>
               </el-form-item>
-              <el-form-item label-width="22px">
-                <el-checkbox  size="large">
+              <el-form-item prop="agree" label-width="22px">
+                <el-checkbox v-model="form.agree" size="large">
                   我已同意隐私条款和服务条款
                 </el-checkbox>
               </el-form-item>
-              <el-button size="large" class="subBtn">点击登录</el-button>
+              <el-button size="large" class="subBtn" :disabled="!form.agree">点击登录</el-button>
             </el-form>
           </div>
         </div>
