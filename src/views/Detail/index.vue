@@ -3,8 +3,12 @@ import { getDetail } from '@/apis/detail';
 import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import DetailHot from './components/DetailHot.vue'
-import ImageView from '@/components/ImageView/index.vue'
-import XtxSku from '@/components/XtxSku/index.vue'
+
+
+
+// 使用全局组件了，不需要一个一个导入
+// import ImageView from '@/components/ImageView/index.vue'
+// import XtxSku from '@/components/XtxSku/index.vue'
 
 //  定义商品变量 准备接收请求到的商品详细信息
 const goods=ref([])
@@ -53,7 +57,7 @@ const skuChange =(sku)=>{
           <div class="goods-info">
             <div class="media">
               <!-- 图片预览区 -->
-              <ImageView :image-list="goods.mainPictures"></ImageView>
+              <XtxImageView :image-list="goods.mainPictures"></XtxImageView>
               <!-- 统计数量 -->
               <ul class="goods-sales">
                 <li>
