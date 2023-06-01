@@ -77,7 +77,7 @@ onMounted(()=>{
     padding: 20px 30px;
     text-align: center;
     background: #fff;
-
+    width: 100%;
     img {
       width: 160px;
       height: 160px;
