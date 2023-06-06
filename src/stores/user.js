@@ -14,6 +14,7 @@ export const useUserStore = defineStore('user',()=>{
     const getUserInfo = async ({account,password})=>{
        const res = await loginAPI({account,password})
        userInfo.value = res.result
+       console.log(userInfo);
     }
     // 3、以对象的格式把state和action return
     return {
