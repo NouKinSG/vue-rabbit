@@ -56,6 +56,7 @@ const addCart = ()=>{
       attrsText:skuObj.specsText, // 商品规格文本
       selected:true,    // 商品是否选中
     })
+    ElMessage.success("成功加购");
   } else{
     // 规格没有选择 提示用户
     ElMessage.warning("请选择完整规格");
