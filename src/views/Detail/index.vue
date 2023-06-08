@@ -58,7 +58,7 @@ const addCart = ()=>{
     })
   } else{
     // 规格没有选择 提示用户
-    ElMessage.warning("请选择规格");
+    ElMessage.warning("请选择完整规格");
   }
 }
 
